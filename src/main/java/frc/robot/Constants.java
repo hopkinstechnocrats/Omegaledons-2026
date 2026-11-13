@@ -22,6 +22,8 @@ public final class Constants {
     public static final int driverXboxControllerPort = 0;
     public static final int operatorXboxControllerPort = 1;
 
+    public static final int talonFXExampleCANID = 1; //Check this later and get an ID
+    public static final int talonFXFollowerExampleCANID = 2; //Check this later and get an ID
     /* 
     Sets the maximum power we can drive at. 1.0 is 100%. 
     The number is negative because xbox controllers are down-right positve
