@@ -3,7 +3,6 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.subsystems;
-
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
@@ -53,7 +52,7 @@ public class DriveSubsystem extends SubsystemBase {
 
   // Create our drive command
   public void drive(double left, double right) {
-    //Tell our drive command to act as a tank drive. Other valid option is Arcade drive
+    //Tell our drive command to act as a tank drive(tankDrive) . Other valid option is Arcade drive(arcadeDrive)
     drive.tankDrive(-left, right);
     
     //readable log printed to roboRIO log accessable from VScode

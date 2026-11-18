@@ -18,10 +18,12 @@ public final class Constants {
     public static final int rightFollowerCANID = 4;
     public static final int leftLeaderCANID = 11;
     public static final int leftFollowerCANID = 5;
+    public static final int RobotArmJointCANID = 3;
+    public static final int RobotArmEndEffectorCANID = 8;
+    //The last two are special for OMEGAladons, ID may be changed.
     //The controller ports can be changed in driverstation
     public static final int driverXboxControllerPort = 0;
     public static final int operatorXboxControllerPort = 1;
-
     /* 
     Sets the maximum power we can drive at. 1.0 is 100%. 
     The number is negative because xbox controllers are down-right positve
