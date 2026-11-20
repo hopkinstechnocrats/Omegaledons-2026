@@ -1,17 +1,26 @@
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
-public class MotorSubsystem {
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 
-   WPI_TalonSRX RobotArmJoint;
+public class MotorSubsystem extends SubsystemBase {
 
- public MotorSubsystem() {
-    
-     RobotArmJoint = new WPI_TalonSRX(Constants.RobotArmJointCANID)
+    WPI_TalonSRX robotArmJoint;
+    public DigitalInput limitSwitch;
 
- 
-     RobotArmJoint.configFactoryDefault();
+    public MotorSubsystem() {
+        // initializes the motor
+        robotArmJoint = new WPI_TalonSRX(Constants.robotArmJointCANID);
+        robotArmJoint.configFactoryDefault();
+        robotArmJoint.setNeutralMode(NeutralMode.Brake);
+    }
+
+    // makes motor turn input speed
+    public void armTilt(double speed) {
+        robotArmJoint.set(speed);
     }
 }
-//unworking ATM (not automatic teller machine)

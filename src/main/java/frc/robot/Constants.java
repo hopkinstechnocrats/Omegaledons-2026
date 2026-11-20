@@ -18,8 +18,11 @@ public final class Constants {
     public static final int rightFollowerCANID = 4;
     public static final int leftLeaderCANID = 11;
     public static final int leftFollowerCANID = 5;
-    public static final int RobotArmJointCANID = 3;
-    public static final int RobotArmEndEffectorCANID = 8;
+
+    // The CAN ID for the arm
+    public static final int robotArmJointCANID = 3;
+    public static final int robotArmEndEffectorCANID = 8;
+    
     //The last two are special for OMEGAladons, ID may be changed.
     //The controller ports can be changed in driverstation
     public static final int driverXboxControllerPort = 0;
