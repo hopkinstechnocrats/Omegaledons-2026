@@ -10,7 +10,11 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+import frc.robot.commands.ArmCommands;
+import frc.robot.commands.EECommands;
+import frc.robot.subsystems.ArmSubsystem;
 import frc.robot.subsystems.DriveSubsystem;
+import frc.robot.subsystems.EESubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 
 
@@ -23,6 +27,10 @@ import edu.wpi.first.wpilibj2.command.Command;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final DriveSubsystem driveSubsystem = new DriveSubsystem();
+
+  private final ArmSubsystem armSubsystem = new ArmSubsystem();
+
+  private final EESubsystem eeSubsystem = new EESubsystem();
 
   CommandXboxController driveController = new CommandXboxController(Constants.driverXboxControllerPort);
   
@@ -40,6 +48,20 @@ public class RobotContainer {
                     }
             , driveSubsystem)
     );
+    armSubsystem.setDefaultCommand(
+            new RunCommand(
+                    () -> {
+                      armSubsystem.BrakeMotor();
+                    }
+            , armSubsystem)
+    );
+    eeSubsystem.setDefaultCommand(
+            new RunCommand(
+                    () -> {
+                      eeSubsystem.BrakeMotor();
+                    }
+            , eeSubsystem)
+    );
   
     
   }
@@ -51,9 +73,10 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-
-    operatorController.a()/*.whileTrue(CommandFile.CommandName(SubsystemObject))*/;
-    //to use this button binding, take the comment markers out of the line of code, (these being the /* and */), and replace the example names
+    operatorController.a().whileTrue(ArmCommands.spinArm(armSubsystem, Constants.armMotorSpeed));
+    operatorController.b().whileTrue(ArmCommands.spinArm(armSubsystem, Constants.armMotorSpeed));
+    operatorController.x().whileTrue(EECommands.spinEE(eeSubsystem, Constants.EEMotorSpeed));
+    operatorController.y().whileTrue(EECommands.spinEE(eeSubsystem, Constants.EEMotorSpeed));
   }
    
   

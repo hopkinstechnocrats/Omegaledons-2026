@@ -18,6 +18,15 @@ public final class Constants {
     public static final int rightFollowerCANID = 4;
     public static final int leftLeaderCANID = 11;
     public static final int leftFollowerCANID = 5;
+
+    //The CANIDs for the robot mechanisms
+    public static final int armMotorCANID = 1;
+    public static final int EEMotorCANID = 2;
+
+    //The speeds for the mechanisms
+    public static final double armMotorSpeed = 0.1;
+    public static final double EEMotorSpeed = 0.1;
+
     //The controller ports can be changed in driverstation
     public static final int driverXboxControllerPort = 0;
     public static final int operatorXboxControllerPort = 1;
