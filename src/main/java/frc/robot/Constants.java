@@ -14,14 +14,14 @@ package frc.robot;
  */
 public final class Constants {
     // The CAN ID is the device ID of each of the motors
-    public static final int rightLeaderCANID = 7;
+    public static final int rightLeaderCANID = 2;
     public static final int rightFollowerCANID = 4;
-    public static final int leftLeaderCANID = 11;
-    public static final int leftFollowerCANID = 5;
+    public static final int leftLeaderCANID = 1;
+    public static final int leftFollowerCANID = 3;
 
     //The CANIDs for the robot mechanisms
-    public static final int armMotorCANID = 1;
-    public static final int EEMotorCANID = 2;
+    public static final int armMotorCANID = 5;
+    public static final int EEMotorCANID = 6;
 
     //The speeds for the mechanisms
     public static final double armMotorSpeed = 0.1;
