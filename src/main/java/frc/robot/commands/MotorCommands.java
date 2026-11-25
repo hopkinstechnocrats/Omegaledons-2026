@@ -14,6 +14,15 @@ public class MotorCommands {
             robotarm);
 
     }
+
+    public static Command negativeSpinMotor(MotorSubsystem robotarm) {
+        return Commands.run(
+            () -> {
+                robotarm.armTilt(-.5);
+            },
+            robotarm);
+
+    }
  
     
 }

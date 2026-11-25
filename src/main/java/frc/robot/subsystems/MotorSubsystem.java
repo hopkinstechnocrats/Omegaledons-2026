@@ -19,8 +19,12 @@ public class MotorSubsystem extends SubsystemBase {
         robotArmJoint.setNeutralMode(NeutralMode.Brake);
     }
 
-    // makes motor turn input speed
+    //d
     public void armTilt(double speed) {
         robotArmJoint.set(speed);
+    }
+
+    public void brake() {
+        robotArmJoint.set(0);
     }
 }
